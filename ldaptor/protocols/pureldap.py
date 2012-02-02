@@ -41,9 +41,6 @@ def escape(s):
     s = s.replace('\0', r'\00')
     return s
 
-class LDAPInteger(BERInteger):
-    pass
-
 class LDAPString(BEROctetString):
     pass
 
@@ -1126,6 +1123,7 @@ class LDAPModifyDNResponse(LDAPResult):
 #class LDAPCompareRequest(LDAPProtocolRequest):
 #class LDAPAbandonRequest(LDAPProtocolRequest):
 #    needs_answer=0
+
 
 class LDAPOID(BEROctetString):
     pass
