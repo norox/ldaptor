@@ -1331,5 +1331,4 @@ class LDAPBERDecoderContext(BERDecoderContext):
         LDAPExtendedResponse.tag: LDAPExtendedResponse,
         LDAPModifyDNRequest.tag: LDAPModifyDNRequest,
         LDAPModifyDNResponse.tag: LDAPModifyDNResponse,
-        LDAPAbandonRequest.tag: LDAPAbandonRequest,
     }
