@@ -1124,38 +1124,8 @@ class LDAPModifyDNResponse(LDAPResult):
 
 #class LDAPCompareResponse(LDAPProtocolResponse):
 #class LDAPCompareRequest(LDAPProtocolRequest):
-
-class LDAPBERDecoderContext_LDAPAbandonRequest(BERDecoderContext):
-    Identities = {
-        CLASS_CONTEXT|0x50: BEROctetString,
-        }
-
-class LDAPAbandonRequest(LDAPProtocolRequest, LDAPInteger):
-    tag = CLASS_APPLICATION|0x10
-    needs_answer=0
-
-    def __init__(self, value=None, id=None, tag=None):
-        """
-        Initialize the object
-
-        l=LDAPAbandonRequest(id=1)
-        """
-        if id is None and value is not None:
-            id = value
-        LDAPProtocolRequest.__init__(self)
-        LDAPInteger.__init__(self, value=id, tag=tag)
-
-    def __str__(self):
-        return LDAPInteger.__str__(self)
-
-    def __repr__(self):
-        if self.tag==self.__class__.tag:
-            return self.__class__.__name__+"(id=%s)" \
-                   %repr(self.value)
-        else:
-            return self.__class__.__name__ \
-                   +"(id=%s, tag=%d)" \
-                   %(repr(self.value), self.tag)
+#class LDAPAbandonRequest(LDAPProtocolRequest):
+#    needs_answer=0
 
 class LDAPOID(BEROctetString):
     pass
